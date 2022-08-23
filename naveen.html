@@ -1,1 +1,30 @@
-*************************************hello**************************************
+Import javax,servlet. *;
+Import java.io.*;
+Public class OurFirstServlet implements Servlet{
+ServletConfig config=null;
+Public void init(ServletConfig sc)
+{
+Config = sc;
+System.out.println(“in  init”);
+}
+public void service(ServletRequest req, ServletResponse res)
+throws ServletException, IOException
+{
+res.setContenttype("text/html");
+PrintWriter pw = res.getWriter();
+pw.println("<h2>hello from servlet</h2>");
+System.out.println("in service");
+}
+//destroy method
+public void destroy()
+{
+System.out.println("in destroy");
+}
+public String getServletInfo()
+{
+return "MyFirstServlet";
+}
+public ServletConfig getServletConfig()
+{
+return config;
+}
