@@ -1,21 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap Website Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-.fakeimg {
-    height: 150px;
-    background: #aaa;
-  }
-  </style>
+<title>First Servlet Program</title>
 </head>
 <body>
+<form action=”Servlet”>
+<input type="submit" value="invoke servlet">
+</form>
+</body>
+</html>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>Welcome to Globallogic</h1>
-  <p>Start the career with accelerate journey!</p> */
+Import javax,servlet. *;
+Import java.io.*;
+Public class OurFirstServlet implements Servlet{
+ServletConfig config=null;
+Public void init(ServletConfig sc)
+{
+Config = sc;
+System.out.println(“in  init”);
+}
+public void service(ServletRequest req, ServletResponse res)
+throws ServletException, IOException
+{
+res.setContenttype("text/html");
+PrintWriter pw = res.getWriter();
+pw.println("<h2>hello from servlet</h2>");
+System.out.println("in service");
+}
+//destroy method
+public void destroy()
+{
+System.out.println("in destroy");
+}
+public String getServletInfo()
+{
+return "MyFirstServlet";
+}
+public ServletConfig getServletConfig()
+{
+return config;
+}
+
