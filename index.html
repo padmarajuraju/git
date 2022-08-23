@@ -1,16 +1,25 @@
 <html>
     <head>
-        <title>Create an alert</title>
+        <title>Validate input data</title>
     </head>
       
     <body>
-        <h1 id = "para1">GeeksforGeeks</h1>
-        <input type = "Submit" onclick = "Click()"/>
-        <script style = "text/javascript">
-            function Click() {
-                document.getElementById("para1").style.color = "#009900";
-                window.alert("Color changed to green");
+        <p>Enter graduation percentage:</p>
+        <input id="perc">
+        <button type="button" onclick="Validate()">Submit</button>
+        <p id="demo"></p>
+        <script>
+            function Validate() {
+                var x, text;
+                x = document.getElementById("perc").value;
+                if (isNaN(x) || x < 60) {
+                    window.alert("Not selected in GeeksforGeeks");
+                } else {
+                document.getElementById("demo").innerHTML = 
+                              "Selected: Welcome to GeeksforGeeks";
+                document.getElementById("demo").style.color = "#009900";
+                }
             }
         </script>
     </body>
-</html>           
+</html> 
