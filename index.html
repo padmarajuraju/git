@@ -120,13 +120,13 @@ h1 {
         </section>
         <section class="right">
             <p class="message">Start guessing...</p>
-            <p class="label-score">:100: Score: <span class="score">20</span></p>
+            <p class="label-score">: Score: <span class="score">20</span></p>
             <p class="label-highscore">:medal: Highscore: <span class="highscore">0</span></p>
         </section>
     </main>
     <script>'use strict';
 //console.log(document.querySelector('.message').textContent);
-//document.querySelector('.message').textContent =':pizza: Correct Number!';
+//document.querySelector('.message').textContent =':Your guess is Correct ** winner winner chicken dinner** !';
 let secretNumber=Math.trunc(Math.random()*20)+1;
 let score=20;
 let highscore=0;
@@ -137,7 +137,7 @@ document.querySelector('.check').addEventListener('click',function(){
     if(!guess){
         document.querySelector('.message').textContent=':no_entry: No number!';
     }else if(secretNumber==guess){
-        document.querySelector('.message').textContent=':pizza: Correct Number!';
+        document.querySelector('.message').textContent=':Your guess is Correct ** winner winner chicken dinner** !!';
         document.querySelector('.number').textContent=secretNumber;
         document.querySelector('body').style.backgroundColor = '#60B347';
         document.querySelector('.guess').style.backgroundColor = '#60B347';
